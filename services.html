@@ -175,18 +175,194 @@
         </div> <!-- /.row -->
       </div> <!-- /.container -->
 
-      <nav class="page-nav clear">
+   <nav class="page-nav clear">
   <div class="container">
-    <div class="flex flex-middle space-between">
-      <span class="prev-page"><a href="about.html" class="link">&larr; Prev Page</a></span>
-      <span class="copyright"> Copyright &copy; <span id="current-year"></span>, Designed &amp; Developed by 
-  <a href="https://muzungutech.github.io/muzungutech/" target="_blank" style="color: #141138; font-weight: bold;">Muzungutech</a>.
-</span>
-      <span class="next-page"><a href="resume.html" class="link">Next Page &rarr;</a></span>
+    <div class="nav-wrapper">
+      <div class="nav-links">
+        <span class="prev-page">
+          <a href="welcome.html" class="link">&larr; Prev Page</a>
+        </span>
+        <span class="copyright">
+          Copyright &copy; <span id="current-year"></span>, 
+          Designed &amp; Developed by 
+          <a href="https://muzungutech.github.io/muzungutech/" target="_blank" style="color: #141138; font-weight: bold;">Muzungutech</a>.
+        </span>
+        <span class="next-page">
+          <a href="services.html" class="link">Next Page &rarr;</a>
+        </span>
+      </div>
     </div>
   </div>
-  <!-- /.page-nav -->
 </nav>
+
+<style>
+/* Base styles */
+.page-nav {
+  padding: 1rem 0;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav-wrapper {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Link styles */
+.link {
+  text-decoration: none;
+  color: #141138;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.link:hover {
+  color: #4a4a8a;
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  flex-shrink: 1;
+}
+
+.copyright a {
+  text-decoration: none;
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .prev-page,
+  .next-page {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .prev-page .link,
+  .next-page .link {
+    display: block;
+    padding: 0.875rem 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .copyright {
+    order: 2;
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  
+  .prev-page {
+    order: 1;
+  }
+  
+  .next-page {
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page-nav {
+    padding: 0.75rem 0;
+  }
+  
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .prev-page .link,
+  .next-page .link {
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prev-page .link:active,
+  .next-page .link:active {
+    background-color: #e0e0e0;
+    transform: scale(0.98);
+  }
+  
+  .copyright {
+    font-size: 0.75rem;
+    padding: 0.75rem 0;
+  }
+  
+  .copyright a {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra small phones */
+@media screen and (max-width: 360px) {
+  .prev-page .link,
+  .next-page .link {
+    padding: 1.125rem 0.875rem;
+    font-size: 1.15rem;
+  }
+  
+  .copyright {
+    font-size: 0.7rem;
+  }
+}
+
+/* For phones with large screens (e.g., iPhone Plus/Max) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .prev-page .link,
+  .next-page .link {
+    padding: 0.875rem 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Keep your existing clearfix utility */
+.clear::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Active/tap feedback for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .prev-page .link:active,
+  .next-page .link:active {
+    background-color: #d0d0d0;
+    transform: scale(0.97);
+  }
+}
+
+/* Script to set current year */
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+</style>
       <!-- /.container -->
 
     </div> <!-- /.pt-tablecell -->
