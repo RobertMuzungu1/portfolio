@@ -158,7 +158,65 @@
         </div> <!-- /.row -->
       </div> <!-- /.container -->
 
-      <nav class="page-nav clear">
+      <style>
+  /* Responsive Navigation Styles */
+  .flex-responsive {
+    display: flex;
+    flex-direction: column; /* Stack vertically by default on mobile */
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; /* Adds clean spacing between elements when stacked */
+    text-align: center;
+  }
+
+  /* Medium devices and up (Tablets/Desktops) */
+  @media (min-width: 768px) {
+    .flex-responsive {
+      flex-direction: row; /* Switch to a single horizontal row */
+      gap: 0;
+    }
+    
+    /* Ensures the copyright stays perfectly centered, even if prev/next text lengths differ */
+    .flex-responsive > * {
+      flex: 1;
+    }
+    .flex-responsive .copyright {
+      text-align: center;
+    }
+    .flex-responsive .next-page {
+      text-align: right;
+    }
+    .flex-responsive .prev-page {
+      text-align: left;
+    }
+  }
+</style>
+
+<nav class="page-nav clear">
+  <div class="container">
+    <!-- Replaced 'flex-middle space-between' with 'flex-responsive' for adaptive layouts -->
+    <div class="flex-responsive">
+      <span class="prev-page">
+        <a href="welcome.html" class="link">&larr; Prev Page</a>
+      </span>
+      
+      <span class="copyright">
+        Copyright &copy; <span id="current-year"></span>, 
+        Designed &amp; Developed by 
+        <a href="https://muzungutech.github.io/muzungutech/" target="_blank" style="color: #141138; font-weight: bold;">Muzungutech</a>.
+      </span>
+      
+      <span class="copyright-spacer" style="display: none;"></span>
+      
+      <span class="next-page">
+        <a href="services.html" class="link">Next Page &rarr;</a>
+      </span>
+    </div>
+  </div>
+  <!-- /.page-nav -->
+</nav>
+
+   <!--   <nav class="page-nav clear">
   <div class="container">
     <div class="flex flex-middle space-between">
       <span class="prev-page"><a href="welcome.html" class="link">&larr; Prev Page</a></span>
@@ -171,7 +229,7 @@
     </div>
   </div>
   <!-- /.page-nav -->
-</nav>
+<!--</nav>  -->
       <!-- /.container -->
     </div> <!-- /.pt-tablecell -->
   </div> <!-- /.pt-table -->
