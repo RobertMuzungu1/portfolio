@@ -158,63 +158,145 @@
         </div> <!-- /.row -->
       </div> <!-- /.container -->
 
-      <style>
-  /* Responsive Navigation Styles */
-  .flex-responsive {
-    display: flex;
-    flex-direction: column; /* Stack vertically by default on mobile */
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px; /* Adds clean spacing between elements when stacked */
-    text-align: center;
-  }
-
-  /* Medium devices and up (Tablets/Desktops) */
-  @media (min-width: 768px) {
-    .flex-responsive {
-      flex-direction: row; /* Switch to a single horizontal row */
-      gap: 0;
-    }
-    
-    /* Ensures the copyright stays perfectly centered, even if prev/next text lengths differ */
-    .flex-responsive > * {
-      flex: 1;
-    }
-    .flex-responsive .copyright {
-      text-align: center;
-    }
-    .flex-responsive .next-page {
-      text-align: right;
-    }
-    .flex-responsive .prev-page {
-      text-align: left;
-    }
-  }
-</style>
-
-<nav class="page-nav clear">
+    <nav class="page-nav clear">
   <div class="container">
-    <!-- Replaced 'flex-middle space-between' with 'flex-responsive' for adaptive layouts -->
-    <div class="flex-responsive">
-      <span class="prev-page">
-        <a href="welcome.html" class="link">&larr; Prev Page</a>
-      </span>
-      
-      <span class="copyright">
-        Copyright &copy; <span id="current-year"></span>, 
-        Designed &amp; Developed by 
-        <a href="https://muzungutech.github.io/muzungutech/" target="_blank" style="color: #141138; font-weight: bold;">Muzungutech</a>.
-      </span>
-      
-      <span class="copyright-spacer" style="display: none;"></span>
-      
-      <span class="next-page">
-        <a href="services.html" class="link">Next Page &rarr;</a>
-      </span>
+    <div class="nav-wrapper">
+      <div class="nav-links">
+        <span class="prev-page">
+          <a href="welcome.html" class="link">&larr; Prev Page</a>
+        </span>
+        <span class="copyright">
+          Copyright &copy; <span id="current-year"></span>, 
+          Designed &amp; Developed by 
+          <a href="https://muzungutech.github.io/muzungutech/" target="_blank" style="color: #141138; font-weight: bold;">Muzungutech</a>.
+        </span>
+        <span class="next-page">
+          <a href="services.html" class="link">Next Page &rarr;</a>
+        </span>
+      </div>
     </div>
   </div>
-  <!-- /.page-nav -->
 </nav>
+
+<style>
+/* Base styles */
+.page-nav {
+  padding: 1rem 0;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav-wrapper {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Link styles */
+.link {
+  text-decoration: none;
+  color: #141138;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #4a4a8a;
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  flex-shrink: 1;
+}
+
+.copyright a {
+  text-decoration: none;
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .prev-page,
+  .next-page {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .copyright {
+    order: 2;
+    font-size: 0.75rem;
+    width: 100%;
+  }
+  
+  .prev-page {
+    order: 1;
+  }
+  
+  .next-page {
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page-nav {
+    padding: 0.75rem 0;
+  }
+  
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .link {
+    font-size: 0.9rem;
+  }
+  
+  .copyright {
+    font-size: 0.7rem;
+  }
+}
+
+/* Optional: For very small screens */
+@media screen and (max-width: 320px) {
+  .copyright {
+    font-size: 0.65rem;
+  }
+  
+  .link {
+    font-size: 0.85rem;
+  }
+}
+
+/* Keep your existing clearfix utility if needed */
+.clear::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Script to set current year */
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+</style>
 
    <!--   <nav class="page-nav clear">
   <div class="container">
